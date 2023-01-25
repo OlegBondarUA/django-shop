@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # third party
+    'django_summernote',
     'debug_toolbar',
     # my apps
     'shoptoys',
