@@ -40,6 +40,7 @@ class Product(models.Model):
     def get_url(self):
         return reverse('product_detail', args=[self.category.slug, self.slug])
 
+
 class Cart(models.Model):
     cart_id = models.CharField(max_length=255, blank=True)
     date_added = models.DateField(auto_now_add=True)
