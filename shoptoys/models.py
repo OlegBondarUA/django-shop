@@ -1,9 +1,9 @@
 from django.db import models
-from django.urls import reverse
 
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
+    name_en = models.CharField(max_length=255, default='')
     slug = models.SlugField(max_length=255, unique=True)
 
     class Meta:
@@ -14,31 +14,37 @@ class Category(models.Model):
 
 
 class ProductImages(models.Model):
-    image = models.ImageField(upload_to='images')
-
-    product = models.ForeignKey('Product', on_delete=models.CASCADE)
+    product = models.ForeignKey(
+        'shoptoys.Product', on_delete=models.CASCADE, related_name='images'
+    )
+    image = models.ImageField(upload_to='slide_image')
+    base_url = models.URLField()
 
     def __str__(self):
-        return self.product.name
+        return self.image.name
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=255)
+    base_url = models.URLField(max_length=512)
+    title = models.CharField(max_length=255)
+    title_en = models.CharField(max_length=255, default='')
     slug = models.SlugField(max_length=255, unique=True)
     description = models.TextField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    image = models.ImageField(upload_to='images')
+    price = models.DecimalField(
+        max_digits=10, decimal_places=2,
+        blank=True, null=True
+    )
+    image = models.ImageField(upload_to='image')
     stock = models.IntegerField()
-    available = models.BooleanField(default=True)
+    available = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    category = models.ManyToManyField(Category, related_name='products')
+    product_images = models.ManyToManyField(ProductImages, related_name='product_images')
 
     def __str__(self):
-        return self.name
-
-    def get_url(self):
-        return reverse('product_detail', args=[self.category.slug, self.slug])
+        return self.title
 
 
 class Cart(models.Model):
@@ -50,10 +56,11 @@ class Cart(models.Model):
 
 
 class CartItem(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     active = models.BooleanField(default=True)
+
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     def sub_total(self):
         return self.product.price * self.quantity
