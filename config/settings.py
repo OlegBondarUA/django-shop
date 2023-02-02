@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +44,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'debug_toolbar',
     # my apps
-    'shoptoys',
+    'toyshop',
 ]
 
 MIDDLEWARE = [
