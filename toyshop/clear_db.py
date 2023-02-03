@@ -11,7 +11,7 @@ def main():
         os.remove(os.path.join(dir_, f))
 
     dir_2 = '/Users/olegbondar/Python/django-shop/media/slide_image'
-    for f in os.listdir(dir_):
+    for f in os.listdir(dir_2):
         os.remove(os.path.join(dir_2, f))
 
 

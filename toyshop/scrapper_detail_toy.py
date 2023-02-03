@@ -10,7 +10,7 @@ from django.conf import settings
 from django.db.transaction import atomic
 from django.utils.text import slugify
 
-from toyshop.models import Category, Product, ProductImages
+from toyshop.models import Category, Product, ProductImages, Brand
 
 
 TIME_OUT = 10
@@ -57,15 +57,22 @@ def process(html, url):
         description = soup.select('.collapse-inner p')
         description = [p.text.strip() for p in description]
         price = soup.select('.price .price-value')[0].text.replace('\xa0', '').strip()
+        old_price = soup.select('.price-old .price-value')[0].text.replace('\xa0', '').strip()\
+            if soup.select('.price-old .price-value') else None
         img = soup.select(".slider-item")[0].find('img').get('src')
         slide_img = soup.select(".slider-item")
         slide_img = [i.find('img').get('src') for i in slide_img]
         stock = random.randint(3, 100)
+        rating = round(random.uniform(0.1, 9.9), 1)
+        available = bool(random . getrandbits(1))
+        brand = soup.select('.brand-page')[0].find('a').text.strip().lower()
         category_name = soup.select('.characteristics-wrap')[0].find_all('a')[1].text.strip()
         category_slug = slugify(category_name)
 
         img_name = img.split('/')[-1]
         upload_image_to_local_media(img, img_name)
+
+        brand, _ = Brand.objects.get_or_create(name=brand)
 
         product = Product.objects.create(
             base_url=url,
@@ -73,8 +80,12 @@ def process(html, url):
             slug=slug,
             description=description,
             price=price,
+            old_price=old_price,
+            rating=rating,
+            available=available,
             image=f'image/{img_name}.jpg',
             stock=stock,
+            brand=brand
         )
 
         category, _ = Category.objects.get_or_create(

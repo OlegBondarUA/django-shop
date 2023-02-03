@@ -42,7 +42,12 @@ def main():
         'https://myplay.ua/search?category=0&term=LEGO+FRIENDS',
         'https://myplay.ua/search?category=0&term=LEGO+Marvel+Super+Heroes',
         'https://myplay.ua/search?category=0&term=LEGO+CLASSIC',
-
+        'https://myplay.ua/ru/brands/gravitrax',
+        'https://myplay.ua/ru/brands/lego',
+        'https://myplay.ua/ru/brands/cubicfun',
+        'https://myplay.ua/ru/brands/brand-hot-wheels',
+        'https://myplay.ua/ru/brands/rainbow-high',
+        'https://myplay.ua/ru/brands/goojitzu'
     ]
 
     q = Queue()

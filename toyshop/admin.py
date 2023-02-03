@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django_summernote.admin import SummernoteModelAdmin
 
-from . models import Category, Product, ProductImages, Cart, CartItem
+from . models import Category, Product, ProductImages, Cart, CartItem, Brand
 
 
 class ImagesInline(admin.TabularInline):
@@ -19,7 +19,7 @@ class ImagesInline(admin.TabularInline):
 class ProductAdmin(SummernoteModelAdmin):
     summernote_fields = ('description',)
     inlines = [ImagesInline]
-    list_display = ('title', 'price', 'available', 'picture')
+    list_display = ('title', 'old_price', 'price', 'available', 'picture')
     list_filter = ('category',)
     search_fields = ('title', 'category')
     prepopulated_fields = {'slug': ('title',)}
@@ -29,11 +29,11 @@ class ProductAdmin(SummernoteModelAdmin):
             'fields': (
                 'base_url', 'slug',
                 ('title', 'title_en'),
-                ('price',),
+                ('price', 'old_price'),
                 ('description',),
                 ('image', ),
                 ('stock', 'available'),
-                ('category',),
+                ('category', 'brand'),
             )
         }),
     )
@@ -71,3 +71,4 @@ admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductImages, ImagesAdmin)
 admin.site.register(Cart)
 admin.site.register(CartItem)
+admin.site.register(Brand)
