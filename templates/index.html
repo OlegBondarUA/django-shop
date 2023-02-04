@@ -117,22 +117,7 @@
 											<div class="sc_services sc_services_style_services-3 sc_services_type_images">
 												<div class="sc_slider_swiper swiper-slider-container sc_slider_nopagination sc_slider_controls sc_slider_controls_side" data-interval="8286" data-slides-min-width="130" data-slides-per-view="5" data-slides-space="60">
 													<div class="slides swiper-wrapper">
-														<div class="swiper-slide" data-style="width:100%;">
-															<div class="sc_services_item_wrap">
-																<div class="sc_services_item">
-																	<div class="sc_services_item_featured post_featured">
-																		<div class="post_thumb" data-image="{% static 'images/1a.png' %}" data-title="Stuffed Animals &#038; Plush Toys">
-																			<a class="hover_icon hover_icon_link" href="shop.html">
-																				<img alt="" src="{% static 'images/1a.png' %}">
-																			</a>
-																		</div>
-																	</div>
-																	<h4 class="sc_services_item_title">
-																		<a href="shop.html">Stuffed Animals &#038; Plush Toys</a>
-																	</h4>
-																</div>
-															</div>
-														</div>
+														{% for brand in brands %}
 														<div class="swiper-slide" data-style="width:100%;">
 															<div class="sc_services_item_wrap">
 																<div class="sc_services_item">
@@ -144,59 +129,12 @@
 																		</div>
 																	</div>
 																	<h4 class="sc_services_item_title">
-																		<a href="shop.html">Remote Control &#038; Play Vehicles</a>
+																		<a href="shop.html">{{ brand.name }}</a>
 																	</h4>
 																</div>
 															</div>
 														</div>
-														<div class="swiper-slide" data-style="width:100%;">
-															<div class="sc_services_item_wrap">
-																<div class="sc_services_item">
-																	<div class="sc_services_item_featured post_featured">
-																		<div class="post_thumb" data-image="{% static 'images/3a.png' %}" data-title="Building Toys. Learning &#038; Education">
-																			<a class="hover_icon hover_icon_link" href="shop.html">
-																				<img alt="" src="{% static 'images/3a.png' %}">
-																			</a>
-																		</div>
-																	</div>
-																	<h4 class="sc_services_item_title">
-																		<a href="shop.html">Building Toys. Learning &#038; Education</a>
-																	</h4>
-																</div>
-															</div>
-														</div>
-														<div class="swiper-slide" data-style="width:100%;">
-															<div class="sc_services_item_wrap">
-																<div class="sc_services_item">
-																	<div class="sc_services_item_featured post_featured">
-																		<div class="post_thumb" data-image="{% static 'images/4.png' %}" data-title="Dolls &#038; Dollhouse Accessories">
-																			<a class="hover_icon hover_icon_link" href="shop.html">
-																				<img alt="" src="{% static 'images/4.png' %}">
-																			</a>
-																		</div>
-																	</div>
-																	<h4 class="sc_services_item_title">
-																		<a href="shop.html">Dolls &#038; Dollhouse Accessories</a>
-																	</h4>
-																</div>
-															</div>
-														</div>
-														<div class="swiper-slide" data-style="width:100%;">
-															<div class="sc_services_item_wrap">
-																<div class="sc_services_item">
-																	<div class="sc_services_item_featured post_featured">
-																		<div class="post_thumb" data-image="{% static 'images/5.png' %}" data-title="Video Games &#038; Electronics for Kids">
-																			<a class="hover_icon hover_icon_link" href="shop.html">
-																				<img alt="" src="{% static 'images/5.png' %}">
-																			</a>
-																		</div>
-																	</div>
-																	<h4 class="sc_services_item_title">
-																		<a href="shop.html">Video Games &#038; Electronics for Kids</a>
-																	</h4>
-																</div>
-															</div>
-														</div>
+														{% endfor %}
 													</div>
 													<div class="sc_slider_controls_wrap">
 														<a class="sc_slider_prev" href="#"></a>

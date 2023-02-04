@@ -47,7 +47,7 @@
 				<div class="columns_wrap">
 					<div class="contact_logo column-1_4">
 						<div class="logo">
-							<a href="index.html">
+							<a href="{% url 'index' %}">
 								<img alt="" class="logo_main" height="74" src="{% static 'images/logo.png' %}" width="121">
 								<img alt="" class="logo_fixed" height="74" src="{% static 'images/logo.png' %}" width="121">
 							</a>
@@ -65,14 +65,20 @@
 						</div>
 						<nav class="menu_main_nav_area menu_hover_fade">
 							<ul id="menu_main" class="menu_main_nav">
-								<li class="menu-item current-menu-ancestor current-menu-parent menu-item-has-children"><a href="#"><span>Home</span></a>
+								<li class="menu-item current-menu-ancestor current-menu-parent menu-item-has-children"><a href="#"><span>Category</span></a>
 									<ul class="sub-menu">
-										<li class="menu-item current-menu-item current_page_item"><a href="index.html"><span>Home 1</span></a></li>
-										<li class="menu-item"><a href="home-2.html"><span>Home 2</span></a></li>
-										<li class="menu-item"><a href="home-3.html"><span>Home 3</span></a></li>
+										{% for category in categories %}
+										<li class="menu-item current-menu-item current_page_item"><a href="#"><span>{{ category.name }}</span></a></li>
+										{% endfor %}
 									</ul>
 								</li>
-								<li class="menu-item"><a href="about.html"><span>About Us</span></a></li>
+								<li class="menu-item current-menu-ancestor current-menu-parent menu-item-has-children"><a href="#"><span>Brand</span></a>
+									<ul class="sub-menu">
+										{% for brand in brands %}
+										<li class="menu-item current-menu-item current_page_item"><a href="#"><span>{{ brand.name }}</span></a></li>
+										{% endfor %}
+									</ul>
+								</li>
 								<li class="menu-item menu-item-has-children"><a href="#"><span>Pages</span></a>
 									<ul class="sub-menu">
 										<li class="menu-item"><a href="services.html"><span>Our Services</span></a></li>
@@ -83,20 +89,7 @@
 										<li class="menu-item"><a href="404.html"><span>Page 404</span></a></li>
 									</ul>
 								</li>
-								<li class="menu-item menu-item-has-children"><a><span>Blog</span></a>
-									<ul class="sub-menu">
-										<li class="menu-item"><a href="blog-sidebar.html"><span>Classic With Sidebar</span></a></li>
-										<li class="menu-item"><a href="blog.html"><span>Classic Without Sidebar</span></a></li>
-										<li class="menu-item"><a href="blog-masonry.html"><span>Masonry</span></a></li>
-									</ul>
-								</li>
-								<li class="menu-item menu-item-has-children"><a><span>Elements</span></a>
-									<ul class="sub-menu">
-										<li class="menu-item"><a href="typography.html"><span>Typography</span></a></li>
-										<li class="menu-item"><a href="shortcodes.html"><span>Shortcodes</span></a></li>
-									</ul>
-								</li>
-								<li class="menu-item"><a href="shop.html"><span>Shop</span></a></li>
+								<li class="menu-item"><a href="#"><span>Shop</span></a></li>
 							</ul>
 						</nav>
 					</div>

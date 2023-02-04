@@ -20,8 +20,8 @@ class ProductAdmin(SummernoteModelAdmin):
     summernote_fields = ('description',)
     inlines = [ImagesInline]
     list_display = ('title', 'old_price', 'price', 'available', 'picture')
-    list_filter = ('category',)
-    search_fields = ('title', 'category')
+    list_filter = ('category', 'brand')
+    search_fields = ('title', 'category', 'brand')
     prepopulated_fields = {'slug': ('title',)}
 
     fieldsets = (
@@ -33,7 +33,8 @@ class ProductAdmin(SummernoteModelAdmin):
                 ('description',),
                 ('image', ),
                 ('stock', 'available'),
-                ('category', 'brand'),
+                ('category',),
+                ('brand',)
             )
         }),
     )
@@ -66,9 +67,28 @@ class CategoryAdmin(admin.ModelAdmin):
         return format_html(f'<a href="{link}">{count}</a>')
 
 
+class BrandAdmin(admin.ModelAdmin):
+    list_display = ('name', 'picture', 'total_products')
+    search_fields = ('name',)
+
+    def get_queryset(self, request):
+        queryset = super().get_queryset(request)
+        return queryset.prefetch_related('products')
+
+    @staticmethod
+    def total_products(obj):
+        count = obj.products.count()
+        link = f'/admin/toyshop/product/?brand__id__exact={obj.id}'
+        return format_html(f'<a href="{link}">{count}</a>')
+
+    @staticmethod
+    def picture(obj):
+        return format_html('<img src="{}" style="max-width: 50px">', obj.image.url)
+
+
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductImages, ImagesAdmin)
 admin.site.register(Cart)
 admin.site.register(CartItem)
-admin.site.register(Brand)
+admin.site.register(Brand, BrandAdmin)

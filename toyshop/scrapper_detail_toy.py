@@ -72,7 +72,10 @@ def process(html, url):
         img_name = img.split('/')[-1]
         upload_image_to_local_media(img, img_name)
 
-        brand, _ = Brand.objects.get_or_create(name=brand)
+        brand, _ = Brand.objects.get_or_create(
+            name=brand,
+            slug=slugify(brand)
+        )
 
         product = Product.objects.create(
             base_url=url,
@@ -119,7 +122,7 @@ def worker(queue):
                     allow_redirects=True,
                     timeout=TIME_OUT
                 )
-                print(response.status_code, '\n')
+                print(response.status_code)
 
                 if response.status_code == 404:
                     print('Page not found', url)
@@ -141,7 +144,7 @@ def worker(queue):
 
 
 def main():
-    with open(f'{settings.BASE_DIR}/toys_2.txt') as file:
+    with open(f'{settings.BASE_DIR}/toys.txt') as file:
         links = file.readlines()
 
     queue = Queue()
