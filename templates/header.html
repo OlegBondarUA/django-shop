@@ -49,7 +49,6 @@
 						<div class="logo">
 							<a href="{% url 'index' %}">
 								<img alt="" class="logo_main" height="74" src="{% static 'images/logo.png' %}" width="121">
-								<img alt="" class="logo_fixed" height="74" src="{% static 'images/logo.png' %}" width="121">
 							</a>
 						</div>
 					</div>
@@ -65,21 +64,21 @@
 						</div>
 						<nav class="menu_main_nav_area menu_hover_fade">
 							<ul id="menu_main" class="menu_main_nav">
-								<li class="menu-item current-menu-ancestor current-menu-parent menu-item-has-children"><a href="#"><span>Category</span></a>
+								<li class="menu-item menu-item-has-children"><a href="#"><span>Category</span></a>
 									<ul class="sub-menu">
 										{% for category in categories %}
-										<li class="menu-item current-menu-item current_page_item"><a href="#"><span>{{ category.name }}</span></a></li>
+										<li class="menu-item current-menu-item current_page_item"><a href="{% url 'shop' category.slug %}"><span>{{ category.name }}</span></a></li>
 										{% endfor %}
 									</ul>
 								</li>
-								<li class="menu-item current-menu-ancestor current-menu-parent menu-item-has-children"><a href="#"><span>Brand</span></a>
+								<li class="menu-item menu-item-has-children"><a href="#"><span>Brand</span></a>
 									<ul class="sub-menu">
 										{% for brand in brands %}
-										<li class="menu-item current-menu-item current_page_item"><a href="#"><span>{{ brand.name }}</span></a></li>
+										<li class="menu-item current-menu-item current_page_item"><a href="{% url 'shop' brand.slug %}"><span>{{ brand.name }}</span></a></li>
 										{% endfor %}
 									</ul>
 								</li>
-								<li class="menu-item menu-item-has-children"><a href="#"><span>Pages</span></a>
+								<li class="menu-item menu-item-has-children"><a><span>Pages</span></a>
 									<ul class="sub-menu">
 										<li class="menu-item"><a href="services.html"><span>Our Services</span></a></li>
 										<li class="menu-item"><a href="team.html"><span>Our Team</span></a></li>
@@ -89,7 +88,7 @@
 										<li class="menu-item"><a href="404.html"><span>Page 404</span></a></li>
 									</ul>
 								</li>
-								<li class="menu-item"><a href="#"><span>Shop</span></a></li>
+								<li class="menu-item"><a href="{% url 'oll_shop' %}"><span>Shop</span></a></li>
 							</ul>
 						</nav>
 					</div>

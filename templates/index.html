@@ -117,19 +117,19 @@
 											<div class="sc_services sc_services_style_services-3 sc_services_type_images">
 												<div class="sc_slider_swiper swiper-slider-container sc_slider_nopagination sc_slider_controls sc_slider_controls_side" data-interval="8286" data-slides-min-width="130" data-slides-per-view="5" data-slides-space="60">
 													<div class="slides swiper-wrapper">
-														{% for brand in brands %}
+														{% for category in categories %}
 														<div class="swiper-slide" data-style="width:100%;">
 															<div class="sc_services_item_wrap">
 																<div class="sc_services_item">
 																	<div class="sc_services_item_featured post_featured">
 																		<div class="post_thumb" data-image="{% static 'images/2a.png' %}" data-title="Remote Control &#038; Play Vehicles">
 																			<a class="hover_icon hover_icon_link" href="shop.html">
-																				<img alt="" src="{% static 'images/2a.png' %}">
+																				<img alt="" src="{{ category.image.url }}">
 																			</a>
 																		</div>
 																	</div>
 																	<h4 class="sc_services_item_title">
-																		<a href="shop.html">{{ brand.name }}</a>
+																		<a href="shop.html">{{ category.name }}</a>
 																	</h4>
 																</div>
 															</div>
@@ -164,251 +164,13 @@
 												<div class="sc_section_content_wrap">
 													<article class="myportfolio-container minimal-light" id="esg-grid-49-1-wrap">
 														<div class="esg-grid" id="esg-grid-49-1">
-															<article class="esg-filters esg-singlefilters odd">
-																<div class="esg-filter-wrapper esg-fgc-49">
-																	<div class="esg-filterbutton selected esg-allfilter" data-fid="-1" data-filter="filterall">
-																		<span>Filter - All</span>
-																	</div>
-																	<div class="esg-filterbutton" data-fid="19" data-filter="filter-best-sellers">
-																		<span>Best Sellers</span>
-																		<span class="esg-filter-checked">
-																			<i class="eg-icon-ok-1"></i>
-																		</span>
-																	</div>
-																	<div class="esg-filterbutton" data-fid="26" data-filter="filter-on-sale">
-																		<span>On Sale</span>
-																		<span class="esg-filter-checked">
-																			<i class="eg-icon-ok-1"></i>
-																		</span>
-																	</div>
-																	<div class="esg-filterbutton" data-fid="29" data-filter="filter-top-rated">
-																		<span>Top Rated</span>
-																		<span class="esg-filter-checked">
-																			<i class="eg-icon-ok-1"></i>
-																		</span>
-																	</div>
-																	<div class="eg-clearfix"></div>
-																</div>
-																<div class="esg-sortbutton-wrapper esg-fgc-49">
-																	<div class="esg-sortbutton">
-																		<span>Sort By</span>
-																		<span class="sortby_data">None</span>
-																		<select class="esg-sorting-select">
-																			<option value="date">
-																				Date
-																			</option>
-																		</select>
-																	</div>
-																	<div class="esg-sortbutton-order eg-icon-down-open tp-asc"></div>
-																</div>
-																<div class="esg-cartbutton-wrapper esg-fgc-49">
-																	<div class="esg-cartbutton">
-																		<a href="#">
-																			<i class="eg-icon-basket"></i>
-																			<span class="ess-cart-content">0 items -
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>0.00
-																				</span>
-																			</span>
-																		</a>
-																	</div>
-																</div>
-															</article>
 															<div class="esg-clear-no-height"></div>
 															<ul>
-																<li class="filterall filter-simple filter-building-sets filter-painting-toys filter-best-sellers filter-top-rated eg-juno-skin-1-wrapper eg-post-id-257" data-date="1464266513">
-																	<div class="esg-media-cover-wrapper">
-																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_2.jpg' %}">
-																		</div>
-																		<div class="esg-entry-cover esg-fade" data-delay="0">
-																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
-																			<div class="esg-center eg-post-257 eg-juno-skin-1-element-28-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-28 eg-post-257 button add_to_cart_button product_type_simple" data-product_id="257" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
-																			</div>
-																			<div class="esg-center eg-post-257 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-257 esgbox" href="{% static 'images/product_2.jpg' %}">
-																					<i class="eg-icon-search"></i>
-																				</a>
-																			</div>
-																		</div>
-																		<div class="esg-entry-content eg-juno-skin-1-content">
-																			<div class="esg-content eg-post-257 eg-juno-skin-1-element-0">
-																				LEGO Juniors 10667 Construction
-																			</div>
-																			<div class="esg-content eg-post-257 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-257" href="#" rel="tag">Building Sets</a>,<a class="eg-juno-skin-1-element-33 eg-post-257" href="#" rel="tag">Painting Toys</a>
-																			</div>
-																			<div class="esg-content eg-post-257 eg-juno-skin-1-element-25">
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>45.99
-																				</span>
-																			</div>
-																		</div>
-																	</div>
-																</li>
-																<li class="filterall filter-simple filter-lollipops filter-robotic-toys filter-on-sale filter-top-rated eg-juno-skin-1-wrapper eg-post-id-262" data-date="1464267060">
-																	<div class="esg-media-cover-wrapper">
-																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_1.jpg' %}">
-																		</div>
-																		<div class="esg-entry-cover esg-fade" data-delay="0">
-																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
-																			<div class="esg-center eg-post-262 eg-juno-skin-1-element-28-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-28 eg-post-262 button add_to_cart_button product_type_simple" data-product_id="262" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
-																			</div>
-																			<div class="esg-center eg-post-262 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-262 esgbox" href="{% static 'images/product_1.jpg' %}">
-																					<i class="eg-icon-search"></i>
-																				</a>
-																			</div>
-																		</div>
-																		<div class="esg-entry-content eg-juno-skin-1-content">
-																			<div class="esg-content eg-post-262 eg-juno-skin-1-element-0">
-																				Dancing Groot Bobble Action Figure
-																			</div>
-																			<div class="esg-content eg-post-262 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-262" href="http://junotoys.themerex.net/product-category/lollipops/" rel="tag">Lollipops</a>,<a class="eg-juno-skin-1-element-33 eg-post-262" href="#" rel="tag">Robotic Toys</a>
-																			</div>
-																			<div class="esg-content eg-post-262 eg-juno-skin-1-element-25">
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>23.99
-																				</span>
-																			</div>
-																		</div>
-																	</div>
-																</li>
-																<li class="filterall filter-simple filter-arts-crafts filter-outdoor-games filter-best-sellers filter-outdoor filter-play eg-juno-skin-1-wrapper eg-post-id-263" data-date="1464267062">
-																	<div class="esg-media-cover-wrapper">
-																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_3.jpg' %}">
-																		</div>
-																		<div class="esg-entry-cover esg-fade" data-delay="0">
-																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
-																			<div class="esg-center eg-post-263 eg-juno-skin-1-element-28-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-28 eg-post-263 button add_to_cart_button product_type_simple" data-product_id="263" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
-																			</div>
-																			<div class="esg-center eg-post-263 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-263 esgbox" href="{% static 'images/product_3.jpg' %}">
-																					<i class="eg-icon-search"></i>
-																				</a>
-																			</div>
-																		</div>
-																		<div class="esg-entry-content eg-juno-skin-1-content">
-																			<div class="esg-content eg-post-263 eg-juno-skin-1-element-0">
-																				Bruder Toys Mini Excavator Vehicle
-																			</div>
-																			<div class="esg-content eg-post-263 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-263" href="#" rel="tag">Arts &amp; Crafts</a>,
-																				<a class="eg-juno-skin-1-element-33 eg-post-263" href="#" rel="tag">Outdoor Games</a>
-																			</div>
-																			<div class="esg-content eg-post-263 eg-juno-skin-1-element-25">
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>42.24
-																				</span>
-																			</div>
-																		</div>
-																	</div>
-																</li>
-																<li class="filterall filter-simple filter-books filter-robotic-toys filter-children filter-games filter-on-sale eg-juno-skin-1-wrapper eg-post-id-264" data-date="1464267063">
-																	<div class="esg-media-cover-wrapper">
-																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_4.jpg' %}">
-																		</div>
-																		<div class="esg-entry-cover esg-fade" data-delay="0">
-																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
-																			<div class="esg-center eg-post-264 eg-juno-skin-1-element-28-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-28 eg-post-264 button add_to_cart_button product_type_simple" data-product_id="264" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
-																			</div>
-																			<div class="esg-center eg-post-264 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-264 esgbox" href="{% static 'images/product_4.jpg' %}">
-																					<i class="eg-icon-search"></i>
-																				</a>
-																			</div>
-																		</div>
-																		<div class="esg-entry-content eg-juno-skin-1-content">
-																			<div class="esg-content eg-post-264 eg-juno-skin-1-element-0">
-																				Barbie Camper Vehicle
-																			</div>
-																			<div class="esg-content eg-post-264 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-264" href="#" rel="tag">Books</a>,
-																				<a class="eg-juno-skin-1-element-33 eg-post-264" href="#" rel="tag">Robotic Toys</a>
-																			</div>
-																			<div class="esg-content eg-post-264 eg-juno-skin-1-element-25">
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>117.99
-																				</span>
-																			</div>
-																		</div>
-																	</div>
-																</li>
-																<li class="filterall filter-simple filter-clothes-for-kids filter-outdoor-games filter-best-sellers filter-top-rated eg-juno-skin-1-wrapper eg-post-id-265" data-date="1464267082">
-																	<div class="esg-media-cover-wrapper">
-																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_7.jpg' %}">
-																		</div>
-																		<div class="esg-entry-cover esg-fade" data-delay="0">
-																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
-																			<div class="esg-center eg-post-265 eg-juno-skin-1-element-28-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-28 eg-post-265 button add_to_cart_button product_type_simple" data-product_id="265" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
-																			</div>
-																			<div class="esg-center eg-post-265 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-265 esgbox" href="{% static 'images/product_7.jpg' %}">
-																					<i class="eg-icon-search"></i>
-																				</a>
-																			</div>
-																		</div>
-																		<div class="esg-entry-content eg-juno-skin-1-content">
-																			<div class="esg-content eg-post-265 eg-juno-skin-1-element-0">
-																				My Friend Cayla Interactive Doll
-																			</div>
-																			<div class="esg-content eg-post-265 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-265" href="#" rel="tag">Clothes for Kids</a>,
-																				<a class="eg-juno-skin-1-element-33 eg-post-265" href="#" rel="tag">Outdoor Games</a>
-																			</div>
-																			<div class="esg-content eg-post-265 eg-juno-skin-1-element-25">
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>115.99
-																				</span>
-																			</div>
-																		</div>
-																	</div>
-																</li>
-																<li class="filterall filter-simple filter-clothes-for-kids filter-best-sellers eg-juno-skin-1-wrapper eg-post-id-267" data-date="1464267082">
-																	<div class="esg-media-cover-wrapper">
-																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_5.jpg' %}">
-																		</div>
-																		<div class="esg-entry-cover esg-fade" data-delay="0">
-																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
-																			<div class="esg-center eg-post-267 eg-juno-skin-1-element-28-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-28 eg-post-267 button add_to_cart_button product_type_simple" data-product_id="267" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
-																			</div>
-																			<div class="esg-center eg-post-267 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-267 esgbox" href="{% static 'images/product_5.jpg' %}">
-																					<i class="eg-icon-search"></i>
-																				</a>
-																			</div>
-																		</div>
-																		<div class="esg-entry-content eg-juno-skin-1-content">
-																			<div class="esg-content eg-post-267 eg-juno-skin-1-element-0">
-																				Despicable Me Minions Sandwich Box
-																			</div>
-																			<div class="esg-content eg-post-267 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-267" href="#" rel="tag">Clothes for Kids</a>
-																			</div>
-																			<div class="esg-content eg-post-267 eg-juno-skin-1-element-25">
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>11.99
-																				</span>
-																			</div>
-																		</div>
-																	</div>
-																</li>
+																{% for product in popular_products %}
 																<li class="filterall filter-simple filter-painting-toys filter-space-toys filter-on-sale eg-juno-skin-1-wrapper eg-post-id-268" data-date="1464267082">
 																	<div class="esg-media-cover-wrapper">
 																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_16.jpg' %}">
+																			<img alt="" src="{{ product.image.url}}">
 																		</div>
 																		<div class="esg-entry-cover esg-fade" data-delay="0">
 																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
@@ -416,91 +178,27 @@
 																				<a class="eg-juno-skin-1-element-28 eg-post-268 button add_to_cart_button product_type_simple" data-product_id="268" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
 																			</div>
 																			<div class="esg-center eg-post-268 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-268 esgbox" href="{% static 'images/product_16.jpg' %}">
+																				<a class="eg-juno-skin-1-element-32 eg-post-268 esgbox" href="{{ product.image.url}}">
 																					<i class="eg-icon-search"></i>
 																				</a>
 																			</div>
 																		</div>
 																		<div class="esg-entry-content eg-juno-skin-1-content">
 																			<div class="esg-content eg-post-268 eg-juno-skin-1-element-0">
-																				LEGO Juniors 106 Construction
+																				{{ product.title }}
 																			</div>
 																			<div class="esg-content eg-post-268 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-268" href="#" rel="tag">Painting Toys</a>,
-																				<a class="eg-juno-skin-1-element-33 eg-post-268" href="#" rel="tag">Space Toys</a>
+																				<a class="eg-juno-skin-1-element-33 eg-post-268" rel="tag"> Стара ціна {{ product.old_price }} &#36;</a>
 																			</div>
 																			<div class="esg-content eg-post-268 eg-juno-skin-1-element-25">
 																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>45.99
+																					<span class="woocommerce-Price-currencySymbol">&#36;</span>{{ product.price }}
 																				</span>
 																			</div>
 																		</div>
 																	</div>
 																</li>
-																<li class="filterall filter-simple filter-arts-crafts filter-space-toys filter-top-rated eg-juno-skin-1-wrapper eg-post-id-266" data-date="1464267082">
-																	<div class="esg-media-cover-wrapper">
-																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_6.jpg' %}">
-																		</div>
-																		<div class="esg-entry-cover esg-fade" data-delay="0">
-																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
-																			<div class="esg-center eg-post-266 eg-juno-skin-1-element-28-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-28 eg-post-266 button add_to_cart_button product_type_simple" data-product_id="266" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
-																			</div>
-																			<div class="esg-center eg-post-266 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-266 esgbox" href="{% static 'images/product_6.jpg' %}">
-																					<i class="eg-icon-search"></i>
-																				</a>
-																			</div>
-																		</div>
-																		<div class="esg-entry-content eg-juno-skin-1-content">
-																			<div class="esg-content eg-post-266 eg-juno-skin-1-element-0">
-																				VTech Sit-to-Stand Learning Walker
-																			</div>
-																			<div class="esg-content eg-post-266 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-266" href="#" rel="tag">Arts &amp; Crafts</a>,
-																				<a class="eg-juno-skin-1-element-33 eg-post-266" href="#" rel="tag">Space Toys</a>
-																			</div>
-																			<div class="esg-content eg-post-266 eg-juno-skin-1-element-25">
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>24.99
-																				</span>
-																			</div>
-																		</div>
-																	</div>
-																</li>
-																<li class="filterall filter-simple filter-building-sets filter-painting-toys filter-on-sale eg-juno-skin-1-wrapper eg-post-id-269" data-date="1464267083">
-																	<div class="esg-media-cover-wrapper">
-																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_8.jpg' %}">
-																		</div>
-																		<div class="esg-entry-cover esg-fade" data-delay="0">
-																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
-																			<div class="esg-center eg-post-269 eg-juno-skin-1-element-28-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-28 eg-post-269 button add_to_cart_button product_type_simple" data-product_id="269" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
-																			</div>
-																			<div class="esg-center eg-post-269 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-269 esgbox" href="{% static 'images/product_8.jpg' %}">
-																					<i class="eg-icon-search"></i>
-																				</a>
-																			</div>
-																		</div>
-																		<div class="esg-entry-content eg-juno-skin-1-content">
-																			<div class="esg-content eg-post-269 eg-juno-skin-1-element-0">
-																				LEGO Juniors Construction
-																			</div>
-																			<div class="esg-content eg-post-269 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-269" href="#" rel="tag">Building Sets</a>,
-																				<a class="eg-juno-skin-1-element-33 eg-post-269" href="#" rel="tag">Painting Toys</a>
-																			</div>
-																			<div class="esg-content eg-post-269 eg-juno-skin-1-element-25">
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>42.99
-																				</span>
-																			</div>
-																		</div>
-																	</div>
-																</li>
+																{% endfor %}
 															</ul>
 															<article class="esg-filters esg-singlefilters even">
 																<div class="esg-pagination esg-fgc-49"></div>
@@ -576,74 +274,11 @@
 													<article class="myportfolio-container minimal-light" id="esg-grid-51-1-wrap">
 														<div class="esg-grid" id="esg-grid-51-1">
 															<ul>
-																<li class="filterall filter-simple filter-building-sets filter-learning-toys eg-juno-skin-1-wrapper eg-post-id-285" data-date="1464268256">
-																	<div class="esg-media-cover-wrapper">
-																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_18.jpg' %}">
-																		</div>
-																		<div class="esg-entry-cover esg-fade" data-delay="0">
-																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
-																			<div class="esg-center eg-post-285 eg-juno-skin-1-element-28-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-28 eg-post-285 button add_to_cart_button product_type_simple" data-product_id="285" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
-																			</div>
-																			<div class="esg-center eg-post-285 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-285 esgbox" href="{% static 'images/product_18.jpg' %}">
-																					<i class="eg-icon-search"></i>
-																				</a>
-																			</div>
-																		</div>
-																		<div class="esg-entry-content eg-juno-skin-1-content">
-																			<div class="esg-content eg-post-285 eg-juno-skin-1-element-0">
-																				Swing-N-Slide Jamboree Fort Playset
-																			</div>
-																			<div class="esg-content eg-post-285 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-285" href="#" rel="tag">Building Sets</a>,
-																				<a class="eg-juno-skin-1-element-33 eg-post-285" href="#" rel="tag">Learning Toys</a>
-																			</div>
-																			<div class="esg-content eg-post-285 eg-juno-skin-1-element-25">
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>766.99
-																				</span>
-																			</div>
-																		</div>
-																	</div>
-																</li>
-																<li class="filterall filter-simple filter-learning-toys filter-outdoor-games eg-juno-skin-1-wrapper eg-post-id-284" data-date="1464268249">
-																	<div class="esg-media-cover-wrapper">
-																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_19.jpg' %}">
-																		</div>
-																		<div class="esg-entry-cover esg-fade" data-delay="0">
-																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
-																			<div class="esg-center eg-post-284 eg-juno-skin-1-element-28-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-28 eg-post-284 button add_to_cart_button product_type_simple" data-product_id="284" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
-																			</div>
-																			<div class="esg-center eg-post-284 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-284 esgbox" href="{% static 'images/product_19.jpg' %}">
-																					<i class="eg-icon-search"></i>
-																				</a>
-																			</div>
-																		</div>
-																		<div class="esg-entry-content eg-juno-skin-1-content">
-																			<div class="esg-content eg-post-284 eg-juno-skin-1-element-0">
-																				Outdoor Camping Adventures Vehicle in Pink
-																			</div>
-																			<div class="esg-content eg-post-284 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-284" href="#" rel="tag">Learning Toys</a>,
-																				<a class="eg-juno-skin-1-element-33 eg-post-284" href="#" rel="tag">Outdoor Games</a>
-																			</div>
-																			<div class="esg-content eg-post-284 eg-juno-skin-1-element-25">
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>111.99
-																				</span>
-																			</div>
-																		</div>
-																	</div>
-																</li>
+																{% for product in max_rating_products %}
 																<li class="filterall filter-simple filter-arts-crafts filter-learning-toys eg-juno-skin-1-wrapper eg-post-id-283" data-date="1464268243">
 																	<div class="esg-media-cover-wrapper">
 																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_20.jpg' %}">
+																			<img alt="" src="{{ product.image.url }}">
 																		</div>
 																		<div class="esg-entry-cover esg-fade" data-delay="0">
 																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
@@ -651,27 +286,27 @@
 																				<a class="eg-juno-skin-1-element-28 eg-post-283 button add_to_cart_button product_type_simple" data-product_id="283" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
 																			</div>
 																			<div class="esg-center eg-post-283 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-283 esgbox" href="{% static 'images/product_20.jpg' %}">
+																				<a class="eg-juno-skin-1-element-32 eg-post-283 esgbox" href="{{ product.image.url }}">
 																					<i class="eg-icon-search"></i>
 																				</a>
 																			</div>
 																		</div>
 																		<div class="esg-entry-content eg-juno-skin-1-content">
 																			<div class="esg-content eg-post-283 eg-juno-skin-1-element-0">
-																				RoomMates SpongeBob Stick Wall Decals
+																				{{ product.title }}
 																			</div>
 																			<div class="esg-content eg-post-283 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-283" href="#" rel="tag">Arts &amp; Crafts</a>,
-																				<a class="eg-juno-skin-1-element-33 eg-post-283" href="#" rel="tag">Learning Toys</a>
+																				<a class="eg-juno-skin-1-element-33 eg-post-283" rel="tag"> Rating {{ product.rating }}</a>
 																			</div>
 																			<div class="esg-content eg-post-283 eg-juno-skin-1-element-25">
 																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>90.55
+																					<span class="woocommerce-Price-currencySymbol">&#36;</span>{{ product.price }}
 																				</span>
 																			</div>
 																		</div>
 																	</div>
 																</li>
+																{% endfor %}
 															</ul>
 														</div>
 													</article>
@@ -679,10 +314,11 @@
 													<article class="myportfolio-container minimal-light" id="esg-grid-50-1-wrap">
 														<div class="esg-grid" id="esg-grid-50-1">
 															<ul>
+																{% for product in max_rating_products_2 %}
 																<li class="filterall filter-simple filter-building-sets filter-painting-toys filter-on-sale eg-juno-skin-1-wrapper eg-post-id-269" data-date="1464267083">
 																	<div class="esg-media-cover-wrapper">
 																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_8.jpg' %}">
+																			<img alt="" src="{{ product.image.url }}">
 																		</div>
 																		<div class="esg-entry-cover esg-fade" data-delay="0">
 																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
@@ -690,122 +326,27 @@
 																				<a class="eg-juno-skin-1-element-28 eg-post-269 button add_to_cart_button product_type_simple" data-product_id="269" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
 																			</div>
 																			<div class="esg-center eg-post-269 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-269 esgbox" href="{% static 'images/product_8.jpg' %}">
+																				<a class="eg-juno-skin-1-element-32 eg-post-269 esgbox" href="{{ product.image.url }}">
 																					<i class="eg-icon-search"></i>
 																				</a>
 																			</div>
 																		</div>
 																		<div class="esg-entry-content eg-juno-skin-1-content">
 																			<div class="esg-content eg-post-269 eg-juno-skin-1-element-0">
-																				LEGO Juniors Construction
+																				{{ product.title }}
 																			</div>
 																			<div class="esg-content eg-post-269 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-269" href="#" rel="tag">Building Sets</a>,
-																				<a class="eg-juno-skin-1-element-33 eg-post-269" href="#" rel="tag">Painting Toys</a>
+																				<a class="eg-juno-skin-1-element-33 eg-post-269" href="#" rel="tag"> Rating {{ product.rating }}</a>,
 																			</div>
 																			<div class="esg-content eg-post-269 eg-juno-skin-1-element-25">
 																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>42.99
+																					<span class="woocommerce-Price-currencySymbol">&#36;</span>{{ product.price }}
 																				</span>
 																			</div>
 																		</div>
 																	</div>
 																</li>
-																<li class="filterall filter-simple filter-clothes-for-kids filter-outdoor-games filter-best-sellers filter-top-rated eg-juno-skin-1-wrapper eg-post-id-265" data-date="1464267082">
-																	<div class="esg-media-cover-wrapper">
-																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_7.jpg' %}">
-																		</div>
-																		<div class="esg-entry-cover esg-fade" data-delay="0">
-																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
-																			<div class="esg-center eg-post-265 eg-juno-skin-1-element-28-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-28 eg-post-265 button add_to_cart_button product_type_simple" data-product_id="265" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
-																			</div>
-																			<div class="esg-center eg-post-265 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-265 esgbox" href="{% static 'images/product_7.jpg' %}">
-																					<i class="eg-icon-search"></i>
-																				</a>
-																			</div>
-																		</div>
-																		<div class="esg-entry-content eg-juno-skin-1-content">
-																			<div class="esg-content eg-post-265 eg-juno-skin-1-element-0">
-																				My Friend Cayla Interactive Doll
-																			</div>
-																			<div class="esg-content eg-post-265 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-265" href="#" rel="tag">Clothes for Kids</a>,
-																				<a class="eg-juno-skin-1-element-33 eg-post-265" href="#" rel="tag">Outdoor Games</a>
-																			</div>
-																			<div class="esg-content eg-post-265 eg-juno-skin-1-element-25">
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>115.99
-																				</span>
-																			</div>
-																		</div>
-																	</div>
-																</li>
-																<li class="filterall filter-simple filter-clothes-for-kids filter-best-sellers eg-juno-skin-1-wrapper eg-post-id-267" data-date="1464267082">
-																	<div class="esg-media-cover-wrapper">
-																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_5.jpg' %}">
-																		</div>
-																		<div class="esg-entry-cover esg-fade" data-delay="0">
-																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
-																			<div class="esg-center eg-post-267 eg-juno-skin-1-element-28-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-28 eg-post-267 button add_to_cart_button product_type_simple" data-product_id="267" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
-																			</div>
-																			<div class="esg-center eg-post-267 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-267 esgbox" href="{% static 'images/product_5.jpg' %}">
-																					<i class="eg-icon-search"></i>
-																				</a>
-																			</div>
-																		</div>
-																		<div class="esg-entry-content eg-juno-skin-1-content">
-																			<div class="esg-content eg-post-267 eg-juno-skin-1-element-0">
-																				Despicable Me Minions Sandwich Box
-																			</div>
-																			<div class="esg-content eg-post-267 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-267" href="#" rel="tag">Clothes for Kids</a>
-																			</div>
-																			<div class="esg-content eg-post-267 eg-juno-skin-1-element-25">
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>11.99
-																				</span>
-																			</div>
-																		</div>
-																	</div>
-																</li>
-																<li class="filterall filter-simple filter-arts-crafts filter-space-toys filter-top-rated eg-juno-skin-1-wrapper eg-post-id-266" data-date="1464267082">
-																	<div class="esg-media-cover-wrapper">
-																		<div class="esg-entry-media">
-																			<img alt="" src="{% static 'images/product_6.jpg' %}">
-																		</div>
-																		<div class="esg-entry-cover esg-fade" data-delay="0">
-																			<div class="esg-overlay esg-fade eg-juno-skin-1-container" data-delay="0"></div>
-																			<div class="esg-center eg-post-266 eg-juno-skin-1-element-28-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-28 eg-post-266 button add_to_cart_button product_type_simple" data-product_id="266" data-product_sku="" href="#" rel="nofollow">Add to cart</a>
-																			</div>
-																			<div class="esg-center eg-post-266 eg-juno-skin-1-element-32-a esg-slide" data-delay="0.1">
-																				<a class="eg-juno-skin-1-element-32 eg-post-266 esgbox" href="{% static 'images/product_6.jpg' %}">
-																					<i class="eg-icon-search"></i>
-																				</a>
-																			</div>
-																		</div>
-																		<div class="esg-entry-content eg-juno-skin-1-content">
-																			<div class="esg-content eg-post-266 eg-juno-skin-1-element-0">
-																				VTech Sit-to-Stand Learning Walker
-																			</div>
-																			<div class="esg-content eg-post-266 eg-juno-skin-1-element-33-a">
-																				<a class="eg-juno-skin-1-element-33 eg-post-266" href="#" rel="tag">Arts &amp; Crafts</a>,
-																				<a class="eg-juno-skin-1-element-33 eg-post-266" href="#" rel="tag">Space Toys</a>
-																			</div>
-																			<div class="esg-content eg-post-266 eg-juno-skin-1-element-25">
-																				<span class="woocommerce-Price-amount amount">
-																					<span class="woocommerce-Price-currencySymbol">&#36;</span>24.99
-																				</span>
-																			</div>
-																		</div>
-																	</div>
-																</li>
+																{% endfor %}
 															</ul>
 														</div>
 													</article>
@@ -814,70 +355,6 @@
 											</div>
 										</div>
 										<div class="vc_empty_space em_height_4-5">
-											<span class="vc_empty_space_inner"></span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="vc_row wpb_row vc_row-fluid vc_custom_1465394530867 inverse_colors" data-vc-full-width="true" data-vc-full-width-init="false">
-							<div class="wpb_column vc_column_container vc_col-sm-12">
-								<div class="vc_column-inner">
-									<div class="wpb_wrapper">
-										<div class="vc_empty_space em_height_4-3">
-											<span class="vc_empty_space_inner"></span>
-										</div>
-										<div class="sc_services_wrap" id="sc_services_025_wrap">
-											<div class="sc_services sc_services_style_services-3 sc_services_type_icons" id="sc_services_025">
-												<div class="sc_columns columns_wrap">
-													<div class="column-1_4 column_padding_bottom">
-														<div class="sc_services_item sc_services_item_1" id="sc_services_025_1">
-															<span class="sc_icon icon-time10"></span>
-															<h4 class="sc_services_item_title">
-																<a href="single-post.html">Fast Delivery</a>
-															</h4>
-															<div class="sc_services_item_description">
-																<p>Find tracking information and order details from Your Orders.</p>
-															</div>
-														</div>
-													</div>
-													<div class="column-1_4 column_padding_bottom">
-														<div class="sc_services_item sc_services_item_2" id="sc_services_025_2">
-															<span class="sc_icon icon-key65"></span>
-															<h4 class="sc_services_item_title">
-																<a href="single-post.html">Save Money</a>
-															</h4>
-															<div class="sc_services_item_description">
-																<p>Save $5 every year compared to the monthly plan by paying yearly.</p>
-															</div>
-														</div>
-													</div>
-													<div class="column-1_4 column_padding_bottom">
-														<div class="sc_services_item sc_services_item_3" id="sc_services_025_3">
-															<span class="sc_icon icon-rocket21"></span>
-															<h4 class="sc_services_item_title">
-																<a href="single-post.html">Fast Returns</a>
-															</h4>
-															<div class="sc_services_item_description">
-																<p>Money back. If the item didn’t suit you</p>
-															</div>
-														</div>
-													</div>
-													<div class="column-1_4 column_padding_bottom">
-														<div class="sc_services_item sc_services_item_4" id="sc_services_025_4">
-															<span class="sc_icon icon-sun41"></span>
-															<h4 class="sc_services_item_title">
-																<a href="single-post.html">Online Support</a>
-															</h4>
-															<div class="sc_services_item_description">
-																<p>Use our 24/7 customer hotline so you’re not alone if you have a question</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="vc_empty_space em_height_2-5">
 											<span class="vc_empty_space_inner"></span>
 										</div>
 									</div>
@@ -990,41 +467,15 @@
 												</div>
 												<div class="sc_slider_swiper swiper-slider-container sc_slider_nopagination sc_slider_controls sc_slider_controls_side" data-interval="6275" data-slides-min-width="130" data-slides-per-view="5" data-slides-space="60">
 													<div class="slides swiper-wrapper">
+														{% for brand in brands %}
 														<div class="swiper-slide" data-style="width:100%;">
 															<div class="sc_clients_item sc_clients_item_1" id="sc_clients_780_1">
 																<div class="sc_client_image">
-																	<img alt="" src="{% static 'images/1-3a.png' %}">
+																	<img alt='' src="{{ brand.image.url }}">
 																</div>
 															</div>
 														</div>
-														<div class="swiper-slide" data-style="width:100%;">
-															<div class="sc_clients_item sc_clients_item_2" id="sc_clients_780_2">
-																<div class="sc_client_image">
-																	<img alt="" src="{% static 'images/2-3.png' %}">
-																</div>
-															</div>
-														</div>
-														<div class="swiper-slide" data-style="width:100%;">
-															<div class="sc_clients_item sc_clients_item_3" id="sc_clients_780_3">
-																<div class="sc_client_image">
-																	<img alt="" src="{% static 'images/3-2a.png' %}">
-																</div>
-															</div>
-														</div>
-														<div class="swiper-slide" data-style="width:100%;">
-															<div class="sc_clients_item sc_clients_item_4" id="sc_clients_780_4">
-																<div class="sc_client_image">
-																	<img alt="" src="{% static 'images/4-3.png' %}">
-																</div>
-															</div>
-														</div>
-														<div class="swiper-slide" data-style="width:100%;">
-															<div class="sc_clients_item sc_clients_item_5" id="sc_clients_780_5">
-																<div class="sc_client_image">
-																	<img alt="" src="{% static 'images/5-1a.png' %}">
-																</div>
-															</div>
-														</div>
+														{% endfor %}
 													</div>
 													<div class="sc_slider_controls_wrap">
 														<a class="sc_slider_prev" href="#"></a>

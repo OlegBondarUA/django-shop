@@ -34,8 +34,13 @@
 		<link rel="apple-touch-icon-precomposed" href="{% static 'images/cropped-big_favicon-180x180.png' %}" />
 		<meta name="msapplication-TileImage" content="{% static 'images/cropped-big_favicon-270x270.png' %}" />
 	</head>
-
+	{% if request.path == '/' %}
 	<body class="home page body_filled scheme_original top_panel_above sidebar_hide">
+	{% else %}
+	<body class="archive shoppg woocommerce woocommerce-page body_filled article_style_stretch layout_excerpt scheme_original top_panel_above sidebar_show sidebar_left wpb-js-composer vc_responsive">
+	<a id="toc_home" class="sc_anchor" title="Home" data-description="&lt;i&gt;Return to Home&lt;/i&gt; - &lt;br&gt;navigate to home page of the site" data-icon="icon-home" data-url="index.html" data-separator="yes"></a>
+	<a id="toc_top" class="sc_anchor" title="To Top" data-description="&lt;i&gt;Back to top&lt;/i&gt; - &lt;br&gt;scroll to top of the page" data-icon="icon-double-up" data-url="" data-separator="yes"></a>
+	{% endif %}
 		<div class="body_wrap">
 			<div class="page_wrap">
 				<div class="top_panel_fixed_wrap"></div>
