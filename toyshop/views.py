@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView, ListView, DetailView
 from .models import Category, Product, ProductImages, Brand
 from . import selectors
+from django.urls import resolve
 
 
 class IndexView(TemplateView):
@@ -10,7 +11,7 @@ class IndexView(TemplateView):
         context = super().get_context_data(**kwargs)
         context |= {
             'categories': Category.objects.all(),
-            'brands': Brand.objects.all(),
+            'brands': Brand.objects.all()[0:8],
             'popular_products': selectors.popular_in_shop(),
             'max_rating_products': selectors.max_rating_selector(),
             'max_rating_products_2': selectors.max_rating_selector()[3:],
@@ -25,21 +26,27 @@ class ProductCatalogView(ListView):
     slug_url_kwarg = 'slug'
     paginate_by = 12
 
-    def get_queryset(self):
+    def get(self, request, *args, **kwargs):
+        self.current_url = resolve(request.path_info).url_name
+        return super().get(request, *args, **kwargs)
+
+    def get_queryset(self, *args, **kwargs):
         queryset = super().get_queryset()
-        category = self.request.GET.get('category')
-        brand = self.request.GET.get('brand')
-        if category:
-            queryset = queryset.filter(category__slug=category)
-        if brand:
-            queryset = queryset.filter(brand__slug=brand)
-        return queryset
+        slug = self.kwargs.get('slug')
+
+        if self.current_url == 'shop':
+            return queryset.filter(category__slug=slug)
+
+        elif self.current_url == 'brand':
+            return queryset.filter(brand__slug=slug)
+
+        return queryset.prefetch_related('category', 'brand')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context |= {
             'categories': Category.objects.all(),
-            'brands': Brand.objects.all(),
+            'brands': Brand.objects.all()[0:8],
             'selected_category': self.request.GET.get('category'),
             'selected_brand': self.request.GET.get('brand'),
         }
@@ -51,6 +58,7 @@ class ProductDetailView(DetailView):
     model = Product
     context_object_name = 'product'
     slug_url_kwarg = 'slug'
+    queryset = Product.objects.all().prefetch_related('category')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
