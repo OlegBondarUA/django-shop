@@ -26,18 +26,8 @@
 							<a href="#" class="woocommerce_thumbs icon-th" title="Show products as thumbs"></a>
 						</form>
 					</div>
-					<p class="woocommerce-result-count">Showing all 14 results</p>
-					<form class="woocommerce-ordering" method="get">
-						<select name="orderby" class="orderby">
-							<option value="menu_order" selected='selected'>Default sorting</option>
-							<option value="popularity">Sort by popularity</option>
-							<option value="rating">Sort by average rating</option>
-							<option value="date">Sort by newness</option>
-							<option value="price">Sort by price: low to high</option>
-							<option value="price-desc">Sort by price: high to low</option>
-						</select>
-						<input type="hidden" name="q" value="#" />
-					</form>
+					<p class="woocommerce-result-count">
+						Showing 1&ndash;8 of {{ products.count }} results</p>
 					<ul class="products">
 						{% for product in products %}
 						<li class="product has-post-thumbnail column-1_3 first featured">
@@ -68,6 +58,13 @@
 			</div>
 			<div class="sidebar widget_area scheme_original" role="complementary">
 				<div class="sidebar_inner widget_area_inner">
+					<aside class="widget woocommerce widget_product_search">
+						<form role="search" method="get" class="search_form" action="#">
+							<input type="text" class="search_field" placeholder="Search for products &hellip;" value="" name="s" title="Search for products:" />
+							<button class="search_button icon-search" type="submit"></button>
+							<input type="hidden" name="post_type" value="product" />
+						</form>
+					</aside>
 					<aside id="woocommerce_product_categories-2" class="widget woocommerce widget_product_categories">
 						<h5 class="widget_title">Categories</h5>
 						{% for category in categories %}
@@ -76,58 +73,29 @@
 						</ul>
 						{% endfor %}
 					</aside>
-					<aside class="widget woocommerce widget_product_search">
-						<form role="search" method="get" class="search_form" action="#">
-							<input type="text" class="search_field" placeholder="Search for products &hellip;" value="" name="s" title="Search for products:" />
-							<button class="search_button icon-search" type="submit"></button>
-							<input type="hidden" name="post_type" value="product" />
-						</form>
+					<aside class="widget woocommerce widget_product_tag_cloud">
+						<h5 class="widget_title">Brand</h5>
+						{% for brand in brands %}
+						<div class="tagcloud">
+							<a href="{% url 'brand' brand.slug %}" title='4 products'>{{ brand.name }}</a>
+						</div>
+						{% endfor %}
 					</aside>
 					<aside class="widget woocommerce widget_products">
 						<h5 class="widget_title">Featured Products</h5>
 						<ul class="product_list_widget">
+							{% for product in featured_products %}
 							<li>
-								<a href="single-product.html" title="Build On Brick Blue Mug">
-									<img src="images/product_12-180x180.jpg" alt="" />
-									<span class="product-title">Build On Brick Blue Mug</span>
+								<a href="{% url 'single' product.slug %}" title="Build On Brick Blue Mug">
+									<img src="{{ product.image.url }}" alt="" />
+									<span class="product-title">{{ product.title }}</span>
 								</a>
 								<span class="woocommerce-Price-amount amount">
-									<span class="woocommerce-Price-currencySymbol">&#36;</span>14.95
+									<span class="woocommerce-Price-currencySymbol">&#36;</span>{{ product.price }}
 								</span>
 							</li>
-							<li>
-								<a href="single-product.html" title="LEGO Juniors Construction">
-									<img src="images/product_8-180x180.jpg" alt="" />
-									<span class="product-title">LEGO Juniors Construction</span>
-								</a>
-								<span class="woocommerce-Price-amount amount">
-									<span class="woocommerce-Price-currencySymbol">&#36;</span>42.99
-								</span>
-							</li>
-							<li>
-								<a href="single-product.html" title="Barbie Camper Vehicle">
-									<img src="images/product_4-180x180.jpg" alt="" />
-									<span class="product-title">Barbie Camper Vehicle</span>
-								</a>
-								<span class="woocommerce-Price-amount amount">
-									<span class="woocommerce-Price-currencySymbol">&#36;</span>117.99
-								</span>
-							</li>
+							{% endfor %}
 						</ul>
-					</aside>
-					<aside class="widget woocommerce widget_product_tag_cloud">
-						<h5 class="widget_title">Tags</h5>
-						<div class="tagcloud">
-							<a href='' title='4 products'>Best Sellers</a>
-							<a href='' title='1 product'>books</a>
-							<a href='' title='1 product'>children</a>
-							<a href='' title='1 product'>games</a>
-							<a href='' title='1 product'>learning</a>
-							<a href='' title='4 products'>On Sale</a>
-							<a href='' title='1 product'>outdoor</a>
-							<a href='' title='1 product'>play</a>
-							<a href='' title='4 products'>Top Rated</a>
-						</div>
 					</aside>
 					<aside class="widget widget_text">
 						<div class="textwidget">

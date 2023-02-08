@@ -10,11 +10,11 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context |= {
-            'categories': Category.objects.all(),
-            'brands': Brand.objects.all()[0:8],
+            'categories': selectors.product_category_selector(),
+            'brands': selectors.product_brand_selector(),
             'popular_products': selectors.popular_in_shop(),
-            'max_rating_products': selectors.max_rating_selector(),
-            'max_rating_products_2': selectors.max_rating_selector()[3:],
+            'max_rating_products': selectors.max_rating_selector()[0:3],
+            'max_rating_products_2': selectors.max_rating_selector()[3:7],
         }
         return context
 
@@ -45,10 +45,9 @@ class ProductCatalogView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context |= {
-            'categories': Category.objects.all(),
-            'brands': Brand.objects.all()[0:8],
-            'selected_category': self.request.GET.get('category'),
-            'selected_brand': self.request.GET.get('brand'),
+            'categories': selectors.product_category_selector(),
+            'brands': selectors.product_brand_selector(),
+            'featured_products': selectors.featured_products_selector()[6:9],
         }
         return context
 
