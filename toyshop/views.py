@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView, ListView, DetailView
-from .models import Category, Product, ProductImages, Brand
+from .models import Product
 from . import selectors
 from django.urls import resolve
 
@@ -62,8 +62,6 @@ class ProductDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context |= {
-            'categories': Category.objects.all(),
-            'brands': Brand.objects.all(),
-            'images': ProductImages.objects.filter(product=self.object),
+            'related_products': selectors.related_products_selector(self.object)
         }
         return context

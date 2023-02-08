@@ -1,7 +1,8 @@
 from random import sample
-from django.db.models import Count, F, QuerySet, Avg, Max, Min
 
-from .models import Product, Category, Brand
+from django.db.models import Count, QuerySet
+
+from .models import Product, Category, Brand, ProductImages
 
 
 def popular_in_shop(product_limit: int = 10) -> QuerySet[Product]:
@@ -23,6 +24,17 @@ def featured_products_selector() -> QuerySet[Product]:
     return Product.objects.prefetch_related(
         'category', 'brand'
     ).order_by('-price')
+
+
+def related_products_selector(product: Product, quantity=4) -> QuerySet[Product]:
+    """Return related products"""
+    related_product = Product.objects.filter(
+        category__id__in=product.category.all()
+    ).values_list('id', flat=True)
+    random_ids = sample(list(related_product), min(quantity, len(related_product)))
+    return Product.objects.filter(id__in=random_ids).prefetch_related(
+        'category', 'brand'
+    )
 
 
 def product_brand_selector() -> QuerySet[Brand]:
