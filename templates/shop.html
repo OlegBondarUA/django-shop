@@ -27,7 +27,8 @@
 						</form>
 					</div>
 					<p class="woocommerce-result-count">
-						Showing 1&ndash;8 of {{ products.count }} results</p>
+						Showing {{ products|length }} of {{ all_products|length }} results
+					</p>
 					<ul class="products">
 						{% for product in products %}
 						<li class="product has-post-thumbnail column-1_3 first featured">
@@ -55,6 +56,7 @@
 						{% endfor %}
 					</ul>
 				</div>
+				{% include 'pagination.html' %}
 			</div>
 			<div class="sidebar widget_area scheme_original" role="complementary">
 				<div class="sidebar_inner widget_area_inner">

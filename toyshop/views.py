@@ -44,6 +44,7 @@ class ProductCatalogView(ListView):
         context = super().get_context_data(**kwargs)
         context |= {
             'featured_products': selectors.featured_products_selector()[6:9],
+            'all_products': selectors.all_products_selector(),
         }
         return context
 

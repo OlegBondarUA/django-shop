@@ -46,3 +46,8 @@ def product_brand_selector() -> QuerySet[Brand]:
 def product_category_selector() -> QuerySet[Category]:
     """Return product categories"""
     return Category.objects.all().order_by('name')
+
+
+def all_products_selector() -> QuerySet[Product]:
+    """Return all products"""
+    return Product.objects.prefetch_related('category', 'brand')
