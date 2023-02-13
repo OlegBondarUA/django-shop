@@ -1,7 +1,7 @@
 from random import sample
 
 from django.db.models import Count, QuerySet
-
+from django.core.paginator import Paginator
 from .models import Product, Category, Brand, ProductImages
 
 
@@ -51,3 +51,14 @@ def product_category_selector() -> QuerySet[Category]:
 def all_products_selector() -> QuerySet[Product]:
     """Return all products"""
     return Product.objects.prefetch_related('category', 'brand')
+
+
+def total_products_selector(product) -> int:
+    """Return total products in shop"""
+    paginator = Paginator(product, 12)
+
+    total_products = 0
+    for page in paginator.page_range:
+        total_products += paginator.get_page(page).object_list.count()
+
+    return total_products

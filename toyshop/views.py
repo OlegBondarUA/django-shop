@@ -42,7 +42,10 @@ class ProductCatalogView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        products = self.get_queryset()
+
         context |= {
+            'total_products': selectors.total_products_selector(products),
             'featured_products': selectors.featured_products_selector()[6:9],
             'all_products': selectors.all_products_selector(),
         }

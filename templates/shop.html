@@ -27,7 +27,7 @@
 						</form>
 					</div>
 					<p class="woocommerce-result-count">
-						Showing {{ products|length }} of {{ all_products|length }} results
+						Showing {{ products.count }} of {{ total_products }} results
 					</p>
 					<ul class="products">
 						{% for product in products %}
